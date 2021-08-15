@@ -1,0 +1,43 @@
+Cp1. You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+Implement a function likes :: [String] -> String, which must take in input array, containing the names of people who like an item. It must return the display text as shown in the examples: */
+Solution1.Cp1
+function likes(names) {
+        if(names == "")
+            return `no one likes this`;
+        else{
+          for(let i=0;i<=names.length;i++){
+                if(names.length == 1)
+                {  return `${names[i]} likes this`;
+                }else if(names.length == 2){
+                   return `${names[i]} and ${names[i+1]} like this`;
+                }else names.length == 3
+                   ?`${names[i]}, ${names[i+1]} and ${names[i+2]} like this`
+                   :`${names[i]}, ${names[i+1]} and ${names.length-2} others like this`;
+                
+            }
+          }
+        }
+Solution2.Cp1
+function likes(names){
+     let l = names.length; 
+     return l ? 
+         l > 3 ? `${names[0]}, ${names[1]} and ${l-2} others like this`:
+         l > 2 ? `${names[0]}, ${names[1]} and ${names[2]} like this`:
+         l > 1 ? `${names[0]} and ${names[1]} like this`:
+         `${names[0]} likes this`:
+         'no one likes this';
+
+Cp2. In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+
+Solution1.Cp2
+function makeNegative(num) {
+ return num > 0 ? -num : num
+  }                                             **use console.log for output
+
+Solution2.Cp2
+const makeNegative2 = n => n<0?n: n==0 ? 0 :-n; **use console.log for output
+
+Solution3.Cp2
+function makeNegative(num) {
+    return -Math.abs(num);
+}                                               **use console.log for output
